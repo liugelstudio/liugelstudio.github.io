@@ -1,4 +1,5 @@
 ---
 import Layout from '../../layouts/SiteLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
-<Layout title="Documentation — LIÜGEL STUDIO"><section class="wrap simple"><div class="eyebrow">Documentation</div><h1>Guides & documentation.</h1><p class="intro">各製品の操作方法・FAQ・技術情報を公開する予定です。</p></section></Layout>
+<Layout title="Docs — LIÜGEL STUDIO" description="LIÜGEL STUDIO製品のドキュメント案内。"><section class="shell simple information-page"><div class="eyebrow">DOCS / DOCUMENTATION</div><h1>Docs<span class="heading-dot">.</span></h1><p class="intro">ソフトウェアの操作方法やFAQ、技術資料を製品別に掲載する予定です。</p><div class="info-divider"><span>DOCUMENTATION</span></div><div class="information-empty"><span>COMING LATER</span><p>各製品の正式公開状況に合わせてドキュメントを追加します。</p></div><a class="simple-link" href={`${base}products/`}>製品一覧へ ↗</a></section></Layout>
