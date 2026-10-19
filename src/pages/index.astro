@@ -1,5 +1,75 @@
 ---
 import Layout from '../layouts/SiteLayout.astro';
-const base=import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL;
 ---
-<Layout title="LIÜGEL STUDIO — Independent Software Development Studio"><div class="wrap hero"><div><div class="eyebrow">Independent Software Development Studio</div><h1>Ideas into<br/><em>software.</em><br/>Built with purpose.</h1><p class="lead">発想を、確かなソフトウェアへ。<br/>LIÜGEL STUDIOは、独自の視点と技術で、使いやすく実用的なソフトウェアを追求する個人開発スタジオです。</p><div class="actions"><a class="btn btn-primary" href={`${base}products/`}>製品を見る ↗</a><a class="btn btn-secondary" href={`${base}about/`}>スタジオについて →</a></div></div><div class="hero-art"><img src={`${base}assets/brand/liugel-studio.svg`} alt="LIÜGEL STUDIO ブランドロゴ"/><span class="corner">DESIGN / ENGINEERING / EXPERIENCE</span></div></div><section class="wrap section line"><div class="section-heading"><div><div class="eyebrow">Selected Work</div><h2>Products & Projects</h2><p>開発中の技術から公開予定の製品まで。</p></div><a class="btn btn-secondary" href={`${base}products/`}>All products →</a></div><div class="cards"><a class="card" href={`${base}products/vrccm/`}><span class="index">01 / DESKTOP UTILITY</span><h3>VRCCM</h3><p>VRC Cache Manager<br/>VRChat向けキャッシュ管理支援ツール。</p><span class="tag">開発中</span><span class="foot">製品詳細を見る ↗</span></a><a class="card" href={`${base}technology/`}><span class="index">02 / DEVELOPER TOOL</span><h3>Liugel.Editor</h3><p>軽量なコードエディター技術の研究・開発。</p><span class="tag">開発中</span><span class="foot">技術紹介を見る ↗</span></a><a class="card" href={`${base}technology/`}><span class="index">03 / ENGINEERING</span><h3>Lugel</h3><p>ソフトウェアの使いやすさと保守性を追求する開発技術。</p><span class="foot">Technologyを見る ↗</span></a></div></section><section class="line"><div class="wrap statement"><div class="eyebrow">Our Philosophy</div><h2>Less noise.<br/>More meaningful software.</h2><p>必要な機能を、適切な形で。見た目だけでなく、安定性・性能・使いやすさまで含めて設計します。</p><a class="btn btn-secondary" href={`${base}about/`}>Our approach →</a></div></section></Layout>
+<Layout title="LIÜGEL STUDIO — Independent Software Studio" description="LIÜGEL STUDIOの公式サイト。VRCCMなどのソフトウェア開発、ツール、技術情報を紹介しています。">
+  <section class="home-hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="overline"><span class="small-square" aria-hidden="true"></span> INDEPENDENT SOFTWARE STUDIO <span class="hero-edition">/ 2026</span></p>
+        <h1 id="hero-title">つくる理由がある。<br /><span>使い続ける価値がある。</span></h1>
+        <p class="hero-subtitle">Thoughtful software. Made independently.</p>
+        <p class="hero-description">LIÜGEL STUDIOは、日々の操作を少し快適にするツールから、開発の可能性を広げる技術まで、一つひとつ丁寧に形にする個人開発スタジオです。</p>
+        <div class="hero-actions"><a class="button button-light" href={`${base}products/`}>製品を見る <span aria-hidden="true">↗</span></a><a class="text-action" href={`${base}about/`}>スタジオについて <span aria-hidden="true">→</span></a></div>
+      </div>
+      <div class="hero-composition" aria-label="LIÜGEL STUDIOのブランドグラフィック">
+        <div class="composition-marker">L / S <span>001</span></div>
+        <div class="composition-core"><span class="composition-l">L</span><div class="composition-bar"></div><span class="composition-chevron" aria-hidden="true"></span></div>
+        <div class="composition-base"><span>DESIGN<br />DEVELOP<br />REFINE</span><span>INDEPENDENT<br />BY DESIGN</span></div>
+      </div>
+    </div>
+    <div class="wrap hero-index"><span>SOFTWARE / ENGINEERING / EXPERIENCE</span><span class="hero-index-right">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span></div>
+  </section>
+
+  <section class="featured-section" aria-labelledby="featured-heading">
+    <div class="wrap">
+      <div class="section-topline"><span>01 / FEATURED SOFTWARE</span><span>SELECTED PROJECT</span></div>
+      <div class="feature-layout">
+        <div class="feature-copy">
+          <div class="section-kicker">現在開発しているソフトウェア</div>
+          <h2 id="featured-heading">道具は、<br />もっとスマートに<br />できる。</h2>
+          <p class="feature-detail">複雑さを減らし、必要な操作に集中する。使いやすさと実用性の両方を考えたデスクトップツール。</p>
+          <a class="button button-dark" href={`${base}products/vrccm/`}>VRCCMについて <span aria-hidden="true">↗</span></a>
+        </div>
+        <a href={`${base}products/vrccm/`} class="feature-art" aria-label="VRCCMの製品紹介へ">
+          <div class="feature-art-top"><span>LIÜGEL / PRODUCT 01</span><span>WINDOWS UTILITY</span></div>
+          <div class="feature-art-content"><div class="feature-art-symbol" aria-hidden="true"><span></span><span></span><span></span></div><strong>VRCCM</strong><p>VRC CACHE MANAGER</p></div>
+          <div class="feature-art-bottom"><span>DEVELOPMENT IN PROGRESS</span><span class="feature-arrow" aria-hidden="true">↗</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog-section" aria-labelledby="catalog-heading">
+    <div class="wrap">
+      <div class="section-topline"><span>02 / OUR WORK</span><a href={`${base}products/`}>ALL PRODUCTS ↗</a></div>
+      <div class="catalog-header"><div><p class="section-kicker">Software & technology</p><h2 id="catalog-heading">つくっているもの。</h2></div><p>日常で使うソフトウェアから、開発を支えるコンポーネントまで。</p></div>
+      <div class="product-grid">
+        <a class="product-tile tile-vrccm" href={`${base}products/vrccm/`}>
+          <div class="product-visual vrccm-visual"><div class="vrccm-sheets"><i></i><i></i><i></i></div><span>V</span></div>
+          <div class="product-metadata"><span>01 / DESKTOP APPLICATION</span><span class="status-dot">開発中</span></div>
+          <h3>VRCCM <span aria-hidden="true">↗</span></h3><p>VRChatのキャッシュを把握・管理するためのデスクトップツール。</p>
+        </a>
+        <a class="product-tile tile-editor" href={`${base}technology/`}>
+          <div class="product-visual editor-visual"><div class="editor-glyph"><span>{'{'}</span><i></i><span>{'}'}</span></div><div class="editor-ruler">01<br />02<br />03<br />04</div></div>
+          <div class="product-metadata"><span>02 / DEVELOPER LIBRARY</span><span class="status-dot">開発中</span></div>
+          <h3>Liugel.Editor <span aria-hidden="true">↗</span></h3><p>軽量性と拡張性を追求するコードエディターライブラリ。</p>
+        </a>
+        <a class="product-tile tile-engineering" href={`${base}technology/`}>
+          <div class="product-visual engineering-visual"><div class="engineering-mark">L<span>.</span></div><span class="visual-axis">DESIGNED / BUILT / REFINED</span></div>
+          <div class="product-metadata"><span>03 / ENGINEERING</span><span>TECHNOLOGY</span></div>
+          <h3>Lugel <span aria-hidden="true">↗</span></h3><p>安定性、使いやすさ、そして新しい可能性を考える開発技術。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="studio-section" aria-labelledby="studio-heading">
+    <div class="wrap studio-layout">
+      <div class="studio-label"><span>03 / THE STUDIO</span><div class="studio-identity">LIÜGEL<br />STUDIO<span>®</span></div></div>
+      <div class="studio-content"><h2 id="studio-heading">小さなスタジオから、<br />確かなソフトウェアを。</h2><p>派手な機能を増やすより、必要なものを適切に届けること。操作性、性能、保守性に向き合いながら、使う人のための道具を開発しています。</p><a class="text-action dark-text-action" href={`${base}about/`}>LIÜGEL STUDIOについて <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </section>
+
+  <section class="bottom-cta"><div class="wrap bottom-cta-inner"><div><p class="section-kicker">GET IN TOUCH</p><h2>ご意見や不具合の報告はこちら。</h2></div><a class="button button-light" href={`${base}contact/`}>Contact <span aria-hidden="true">↗</span></a></div></section>
+</Layout>

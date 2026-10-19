@@ -1,4 +1,16 @@
 ---
-import Layout from '../../layouts/SiteLayout.astro';const base=import.meta.env.BASE_URL;
+import Layout from '../../layouts/SiteLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
-<Layout title="Products — LIÜGEL STUDIO"><section class="wrap simple"><div class="eyebrow">Products</div><h1>Software, thoughtfully built.</h1><p class="intro">LIÜGEL STUDIOの製品と開発プロジェクト。公開状況に応じて情報を更新します。</p><div class="cards"><a class="card" href={`${base}products/vrccm/`}><span class="index">DESKTOP UTILITY</span><h3>VRCCM</h3><p>VRChat向けキャッシュ管理支援ツール。</p><span class="tag">開発中</span><span class="foot">詳細を見る ↗</span></a><a class="card" href={`${base}technology/`}><span class="index">DEVELOPER TOOL</span><h3>Liugel.Editor</h3><p>軽量コードエディターライブラリ。</p><span class="tag">開発中</span><span class="foot">技術を見る ↗</span></a></div></section></Layout>
+<Layout title="Products — LIÜGEL STUDIO" description="LIÜGEL STUDIOの製品一覧。VRCCMやLiugel.Editorなどを紹介します。">
+  <section class="wrap simple products-landing">
+    <div class="overline"><span class="small-square" aria-hidden="true"></span> LIÜGEL STUDIO / PRODUCTS</div>
+    <h1>つくっているもの。</h1>
+    <p class="intro">実際に使う道具だからこそ、わかりやすく、使い続けられるものに。開発中の製品と技術を紹介します。</p>
+    <div class="product-grid product-grid-subpage">
+      <a class="product-tile tile-vrccm" href={`${base}products/vrccm/`}><div class="product-visual vrccm-visual"><div class="vrccm-sheets"><i></i><i></i><i></i></div><span>V</span></div><div class="product-metadata"><span>01 / DESKTOP APPLICATION</span><span class="status-dot">開発中</span></div><h3>VRCCM <span aria-hidden="true">↗</span></h3><p>VRChatのキャッシュを把握・管理するためのデスクトップツール。</p></a>
+      <a class="product-tile tile-editor" href={`${base}technology/`}><div class="product-visual editor-visual"><div class="editor-glyph"><span>{'{'}</span><i></i><span>{'}'}</span></div><div class="editor-ruler">01<br />02<br />03<br />04</div></div><div class="product-metadata"><span>02 / DEVELOPER LIBRARY</span><span class="status-dot">開発中</span></div><h3>Liugel.Editor <span aria-hidden="true">↗</span></h3><p>軽量性と拡張性を追求するコードエディターライブラリ。</p></a>
+      <a class="product-tile tile-engineering" href={`${base}technology/`}><div class="product-visual engineering-visual"><div class="engineering-mark">L<span>.</span></div><span class="visual-axis">DESIGNED / BUILT / REFINED</span></div><div class="product-metadata"><span>03 / ENGINEERING</span><span>TECHNOLOGY</span></div><h3>Lugel <span aria-hidden="true">↗</span></h3><p>ソフトウェアの品質と開発体験を追求する開発技術。</p></a>
+    </div>
+  </section>
+</Layout>

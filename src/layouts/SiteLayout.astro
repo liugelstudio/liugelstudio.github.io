@@ -3,7 +3,51 @@ import '../styles/global.css';
 const { title = 'LIÜGEL STUDIO', description = 'LIÜGEL STUDIO — 独立系ソフトウェア開発スタジオ。' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const link = (p = '') => `${base}${p}`;
-const nav = [{name:'Home',path:''},{name:'Products',path:'products/'},{name:'Technology',path:'technology/'},{name:'About',path:'about/'},{name:'Docs',path:'docs/'},{name:'News',path:'news/'}];
+const nav = [{name:'Products',path:'products/'},{name:'Technology',path:'technology/'},{name:'About',path:'about/'},{name:'Docs',path:'docs/'},{name:'News',path:'news/'}];
 ---
-<!doctype html><html lang="ja"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#090c11"/><meta name="description" content={description}/><title>{title}</title><link rel="icon" href={link('favicon.svg')} type="image/svg+xml"/></head>
-<body><a class="skip" href="#content">本文へ移動</a><div class="ambient" aria-hidden="true"></div><header class="site-header"><div class="wrap header-inner"><a class="brand" href={link()} aria-label="LIÜGEL STUDIO ホーム"><img src={link('assets/brand/liugel-studio.svg')} alt="LIÜGEL STUDIO"/></a><nav class="desktop-nav" aria-label="メインナビゲーション">{nav.map(item=><a href={link(item.path)} aria-current={Astro.url.pathname === link(item.path) ? 'page' : undefined}>{item.name}</a>)}</nav><a class="header-contact" href={link('contact/')}>Contact <span aria-hidden="true">↗</span></a><details class="mobile-menu"><summary aria-label="メニューを開く"><span></span><span></span><span></span></summary><nav aria-label="モバイルナビゲーション">{nav.map(item=><a href={link(item.path)}>{item.name}</a>)}<a href={link('contact/')}>Contact</a></nav></details></div></header><main id="content"><slot /></main><footer class="site-footer"><div class="wrap footer-top"><div><img class="footer-logo" src={link('assets/brand/liugel-studio.svg')} alt="LIÜGEL STUDIO"/><p>Ideas into software. Built with purpose.</p></div><div class="footer-links"><a href={link('products/')}>Products</a><a href={link('about/')}>About</a><a href={link('docs/')}>Docs</a><a href={link('contact/')}>Contact</a></div></div><div class="wrap footer-bottom"><span>© {new Date().getFullYear()} LIÜGEL STUDIO</span><span>Independent Software Development Studio</span></div></footer></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101013" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  <link rel="icon" href={link('favicon.svg')} type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip" href="#content">本文へ移動</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href={link()} aria-label="LIÜGEL STUDIO ホーム"><img src={link('assets/brand/liugel-studio.svg')} alt="LIÜGEL STUDIO" /></a>
+      <span class="header-separator" aria-hidden="true"></span>
+      <a class="header-descriptor" href={link()}>Independent software studio</a>
+      <nav class="desktop-nav" aria-label="メインナビゲーション">
+        {nav.map(item => <a href={link(item.path)} aria-current={Astro.url.pathname === link(item.path) ? 'page' : undefined}>{item.name}</a>)}
+      </nav>
+      <a class="header-contact" href={link('contact/')}>Contact <span aria-hidden="true">↗</span></a>
+      <details class="mobile-menu">
+        <summary aria-label="メニューを開く"><span></span><span></span><span></span></summary>
+        <nav aria-label="モバイルナビゲーション">
+          <a href={link()}>Home</a>
+          {nav.map(item => <a href={link(item.path)}>{item.name}</a>)}
+          <a href={link('contact/')}>Contact</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="content"><slot /></main>
+  <footer class="site-footer">
+    <div class="wrap footer-top">
+      <div class="footer-brand-block">
+        <img class="footer-logo" src={link('assets/brand/liugel-studio.svg')} alt="LIÜGEL STUDIO" />
+        <p>独立した視点で、使い続けたくなる道具を。</p>
+      </div>
+      <nav class="footer-links" aria-label="フッターナビゲーション">
+        <a href={link('products/')}>Products</a><a href={link('technology/')}>Technology</a><a href={link('about/')}>About</a><a href={link('docs/')}>Docs</a><a href={link('news/')}>News</a><a href={link('contact/')}>Contact</a>
+      </nav>
+    </div>
+    <div class="wrap footer-bottom"><span>© {new Date().getFullYear()} LIÜGEL STUDIO</span><span>Designed and developed independently.</span></div>
+  </footer>
+</body>
+</html>
