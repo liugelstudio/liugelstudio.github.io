@@ -422,3 +422,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .showcase-subtitle { font-size: 17px; }
   .works-page-head h1 { font-size: 60px; }
 }
+
+/* M1.11 — Render the unmodified user-provided logo.svg as DOM using the
+   independent browser loader, so its Teko typography is available on iOS. */
+.brand svg.brand-inline { display: block; width: 100%; height: auto; }
+.footer-identity svg.brand-inline { display: block; width: 196px; max-width: 100%; height: auto; }
+.showcase-logo-heading svg.showcase-brand-logo { display: block; width: min(585px, 100%); height: auto; }
+@media (max-width: 680px) {
+  .showcase-logo-heading svg.showcase-brand-logo { width: 100%; max-width: 460px; }
+}

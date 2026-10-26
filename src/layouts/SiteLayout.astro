@@ -20,12 +20,13 @@ const nav = [
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="icon" href={link('favicon.svg')} type="image/svg+xml" />
+    <script is:inline src={link('assets/js/brand-logo.js')} defer></script>
   </head>
   <body>
     <a class="skip" href="#content">本文へ移動</a>
     <header class="site-header">
       <div class="shell header-inner">
-        <a class="brand" href={link()} aria-label="LIÜGEL STUDIO トップページ"><img src={link('assets/brand/logo-display.svg')} alt="LIÜGEL STUDIO" /></a>
+        <a class="brand" href={link()} aria-label="LIÜGEL STUDIO トップページ"><img data-original-logo src={link('assets/brand/logo.svg')} alt="LIÜGEL STUDIO" /></a>
         <span class="header-divider" aria-hidden="true"></span>
         <span class="header-type">SOFTWARE DEVELOPMENT STUDIO</span>
         <nav class="desktop-nav" aria-label="メインナビゲーション">
@@ -46,7 +47,7 @@ const nav = [
     <footer class="site-footer">
       <div class="shell footer-main">
         <div class="footer-identity">
-          <img src={link('assets/brand/logo-display.svg')} alt="LIÜGEL STUDIO" />
+          <img data-original-logo src={link('assets/brand/logo.svg')} alt="LIÜGEL STUDIO" />
           <p><span lang="en">Windows</span>向けソフトウェア、開発者向けツール・ライブラリなどを個人で開発しています。</p>
         </div>
         <nav class="footer-nav" aria-label="フッターナビゲーション">
