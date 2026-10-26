@@ -3,3 +3,5 @@ dist/
 .astro/
 .env*
 !.env.example
+.local-font-sources/
+public/assets/fonts/*.ttf

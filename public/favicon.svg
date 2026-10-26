@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0c1421"/><path d="M18 15v34h30" stroke="#8ebaff" stroke-width="8" fill="none" stroke-linecap="square"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="LIÜGEL STUDIO">
+  <rect width="128" height="128" rx="22" fill="#0b0e13"/>
+  <path d="M44 636H187V0H44ZM97 0V105H370V0Z" transform="matrix(0.15408805 0 0 -0.15408805 32.10377358 113.00000000)" fill="#eef3f9"/>
+  <rect x="103" y="96" width="9" height="15" fill="#3879E0"/>
+</svg>

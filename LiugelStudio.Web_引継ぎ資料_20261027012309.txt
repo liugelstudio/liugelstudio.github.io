@@ -1,0 +1,48 @@
+LIÜGEL STUDIO / LiugelStudio.Web 引継ぎ資料
+日時: 20261027012309
+開発ブランド: LIÜGEL STUDIO / 技術識別: Lugel
+
+[プロジェクト単位]
+目的: GitHub Pages静的公式サイト (Astro/TypeScript)、デザイン不変更の技術負債解消M2。
+基準: M1.11 d3e1269566f890211d7da3ef7d7c3543d3e17fec / main。
+進捗: M2変更ファイルと監査レポート作成、主要CSS/TS構文・ブラウザ再現幅検査PASS。Astro実ビルド未実施 (依存Astroなし)。公開未反映。
+PJ: LiugelStudio.Web / リポジトリ liugelstudio/liugelstudio.github.io / C:\Dev\LiugelStudio.Web。
+言語: Astro + TypeScript + CSS / 静的出力dist / .NET・WPF・NuGet・namespace・slnx・ソリューション同ディレクトリ設定は該当なし。
+依存: Astro ^5.0.0, TypeScript ^5.0.0。Node 22+（開発時）、静的公開先GitHub Pages。別途TTF->WOFF2生成にPython,fontTools,brotli（開発時のみ）、表示時に不要。
+GitHub Actions: .github/workflows/deploy.yml（今回変更なし）。公開URL https://liugelstudio.github.io/。
+セキュリティ・秘密情報: 追加なし。API、DB、ログイン無し。
+公開準備: ZIPをPJ直下に展開→TTF元ファイルからwoff2生成→Apply-M2.ps1→npm run build→画面確認→git add/commit/push。
+
+[主要ファイル単位]
+src/styles/global.css: M1.11追記を基盤統合、@media各幅一箇所、CSS変数、モバイル操作・可読性。
+src/assets/brand/logo.svg: 正規ロゴ原形をTeko SemiBoldでパス化。<text>とフォント依存ゼロ。
+src/components/BrandLogo.astro: 正規SVG1ファイルをビルド時raw import、ヘッダー/フッター/showcaseで同一描画。
+src/layouts/SiteLayout.astro: 共通ヘッダー/フッター/SEO/メニュー制御。
+src/pages/index.astro: showcase picture + Organization JSON-LD。作品と文章維持。
+src/pages/about/index.astro + src/pages/products/vrccm.astro: info-rowsをdl/dt/ddに変更、文章維持。
+src/pages/sitemap.xml.ts: 新規静的sitemap応答。
+public/assets/hero/liugel-studio-hero.png: 既存PNGそのままフォールバック維持。新規AVIF/WebP 3幅×2を追加。
+public/favicon.svg + public/apple-touch-icon.png: 正規ワードマークL字アウトライン由来の暫定シンボル。
+public/og-image.jpg: 1200x630 showcase背景のOGP画像。
+public/robots.txt: サイトマップ通知。
+prepare_webfonts.py: 所持TTFからLatin部分集合WOFF2 400/600生成。フォントの実データはZIP外。
+Apply-M2.ps1: 古い4ファイル削除、TTFをpublic外へ移動、最終ビルド (失敗時push禁止)。
+.gitignore: 元TTFとローカル退避フォルダを非追跡。
+
+[処理・メソッド単位]
+BrandLogo.astro: Astroコンポーネント(同期、Props: class?, decorative?)。入力元src/assets/brand/logo.svg?raw、出力インラインSVG。装飾用途はaria-hidden、本文はrole img。副作用無し。
+SiteLayout.astro: DOMContentへ注入した最小JSでtoggle/keydown/pointerdownを監視。details.openとaria-expandedを同期、Escapeはcloseしsummary.focus、外側クリックclose。Global listenerはページロード中のみ; 別個のdispose不要。
+sitemap.xml.ts / public GET: Astro APIRoute、site URL入力、XML Response戻り値、追加I/O無し。公開ページpath定数の更新要。
+prepare_webfonts.py / script main: Python同期、args --fonts/--output、fontTools subset + WOFF2保存、欠損TTFはFileNotFoundErrorで中断。開発時依存。
+Apply-M2.ps1: PowerShell同期、既存確認→WOFF2準備→TTF非公開退避→旧ロゴ・JSファイル削除→npm build; 成功コード確認、失敗時throw。
+
+[ロードマップと引継ぎ]
+M1.11: 直近のユーザービルド成功基準、デザイン・URL・文章を保持。
+M2: 変更ZIP生成済、CSS/TS静的構文PASS、56幅ページHTML再現テストPASS。
+次作業: 開発PCへ適用、npm ci (必要時)、WOFF2生成、npm run buildの実行成功、PC/iPhoneページ巡回、CI緑確認。
+保留: ファビコンL文字の正式採用、装飾ブルーの色変数集約範囲、Teko OFL同梱とsubsetting条件。
+既知制約: 作業実行環境にAstroパッケージ無しで正式ビルド実行不能。Githubコミット未実施。
+設計判断: 素材原形を保護、PNGフォールバック維持、ロゴを元Tekoからパス化、SSG時のSVG埋め込みでJS不要。
+却下: 実行時fetch/DOMParser、別ロゴsvgの追加、showcase画像差替、全グラフィック背景色の機械的置換。
+
+詳細: README_M2.md, M2_Technical_Audit.md, M2_CSS_Cascade_Before.json/After.json。

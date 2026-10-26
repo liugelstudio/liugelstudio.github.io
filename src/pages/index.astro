@@ -1,16 +1,30 @@
 ---
 import Layout from '../layouts/SiteLayout.astro';
+import BrandLogo from '../components/BrandLogo.astro';
 const base = import.meta.env.BASE_URL;
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'LIÜGEL STUDIO',
+  url: 'https://liugelstudio.github.io/',
+  logo: 'https://liugelstudio.github.io/favicon.svg',
+};
+
 ---
 <Layout title="LIÜGEL STUDIO — ソフトウェア・ツール・サービスの開発" description="LIÜGEL STUDIO公式サイト。VRCCM、Liugel.Editorなどのソフトウェア・ツール・開発技術を紹介します。">
+  <script type="application/ld+json" set:html={JSON.stringify(organization)} />
   <section class="showcase" aria-labelledby="showcase-title">
-    <img class="showcase-backdrop" src={`${base}assets/hero/liugel-studio-hero.png`} alt="" aria-hidden="true" decoding="async" fetchpriority="high" />
+    <picture class="showcase-media" aria-hidden="true">
+      <source type="image/avif" srcset={`${base}assets/hero/liugel-studio-hero-768.avif 768w, ${base}assets/hero/liugel-studio-hero-1200.avif 1200w, ${base}assets/hero/liugel-studio-hero-1920.avif 1920w`} sizes="100vw" />
+      <source type="image/webp" srcset={`${base}assets/hero/liugel-studio-hero-768.webp 768w, ${base}assets/hero/liugel-studio-hero-1200.webp 1200w, ${base}assets/hero/liugel-studio-hero-1920.webp 1920w`} sizes="100vw" />
+      <img class="showcase-backdrop" src={`${base}assets/hero/liugel-studio-hero.png`} width="1672" height="941" alt="" decoding="async" fetchpriority="high" />
+    </picture>
     <div class="showcase-frame shell">
       <div class="showcase-meta"><span class="meta-dot"></span> LIÜGEL STUDIO <span class="meta-slash">/</span> OFFICIAL WEBSITE <span class="meta-right">SOFTWARE / TOOLS / SERVICES</span></div>
       <div class="showcase-grid">
         <div class="showcase-copy">
           <p class="micro-title">INDEPENDENT DEVELOPMENT STUDIO</p>
-          <h1 id="showcase-title" class="showcase-logo-heading"><img class="showcase-brand-logo" data-original-logo src={`${base}assets/brand/logo.svg`} alt="LIÜGEL STUDIO" /></h1>
+          <h1 id="showcase-title" class="showcase-logo-heading"><BrandLogo class="showcase-brand-logo" /></h1>
           <p class="showcase-subtitle">ソフトウェア・ツール・サービス</p>
           <p class="showcase-desc"><span lang="en">Windows</span>向けアプリケーションや開発者向けライブラリなど、さまざまなソフトウェアを個人で開発しています。</p>
           <div class="showcase-buttons"><a class="solid-link" href={`${base}products/`}>開発作品を見る <span aria-hidden="true">↗</span></a><a class="under-link" href={`${base}about/`}>スタジオについて <span aria-hidden="true">→</span></a></div>
