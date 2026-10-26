@@ -1,3 +1,27 @@
+/* M1.7 — Local Teko web fonts (provided font files are added by the site owner). */
+@font-face {
+  font-family: 'Teko';
+  src: url('/assets/fonts/Teko-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Teko';
+  src: url('/assets/fonts/Teko-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+/* Original logo.svg text explicitly uses Teko-SemiBold as a family name. */
+@font-face {
+  font-family: 'Teko-SemiBold';
+  src: url('/assets/fonts/Teko-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
 /* LIÜGEL STUDIO — M1.4 / Software studio editorial system */
 :root {
   color-scheme: dark;
@@ -6,9 +30,9 @@
   --paper: #f3f3f0;
   --white: #fff;
   --line: #d8dadd;
-  --blue: #2368f6;
+  --blue: #3879E0;
   --blue-pale: #a3c3ff;
-  --type: Arial, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif;
+  --type: 'Teko', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif;
   --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
   --page-width: 1460px;
 }
@@ -221,3 +245,180 @@ img { max-width: 100%; height: auto; }
 .information-empty span { font: 800 11px var(--mono); letter-spacing: .1em; color: #8baddb; }
 .information-empty p { color: #c7d1df; font-size: 14px; margin: 10px auto 0; max-width: 580px; }
 @media(max-width: 680px) { .info-rows > div { grid-template-columns: 1fr; gap: 7px; }.info-rows p { grid-column: 1; } .info-divider { margin-top: 48px; } }
+
+/* M1.6 — Wings/gear background. Left-aligned copy; illustration unobstructed on right. */
+.showcase { background: #061d41; }
+.showcase-backdrop { object-position: center center; opacity: 1; }
+.showcase::before {
+  background:
+    linear-gradient(90deg, rgba(2,11,30,.84) 0%, rgba(2,11,30,.76) 23%, rgba(2,11,30,.54) 43%, rgba(2,11,30,.16) 65%, rgba(2,11,30,.03) 100%),
+    linear-gradient(180deg, rgba(2,11,30,.15) 0%, transparent 30%, transparent 73%, rgba(2,11,30,.36) 100%);
+}
+.showcase-grid { justify-content: flex-start; min-height: clamp(570px, 44vw, 680px); padding-block: 64px 82px; }
+.showcase-copy { width: min(590px, 54%); text-align: left; margin-inline: 0; }
+.showcase-logo-heading { margin: 0; line-height: 1; }
+.showcase-brand-logo { display: block; width: min(585px, 100%); height: auto; margin: 0; filter: drop-shadow(0 3px 12px rgba(0,8,28,.4)); }
+.showcase-subtitle { margin: -22px 0 0; color: #f6f9ff; font-size: clamp(18px, 2.05vw, 29px); font-weight: 850; letter-spacing: .04em; text-shadow: 0 2px 12px #001a3e; }
+.showcase-desc { margin: 24px 0 0; max-width: 525px; color: #eff5ff; font-size: 14px; line-height: 2; text-shadow: 0 2px 12px #001630; }
+.showcase-buttons { justify-content: flex-start; }
+.showcase-meta, .showcase-bottom { text-shadow: 0 1px 9px #001b47; }
+@media(max-width: 900px) {
+  .showcase-copy { width: min(580px, 68%); }
+  .showcase::before {
+    background: linear-gradient(90deg,rgba(2,11,30,.89) 0%,rgba(2,11,30,.66) 52%,rgba(2,11,30,.14) 100%),
+      linear-gradient(180deg,rgba(2,11,30,.12),transparent 66%,rgba(2,11,30,.4));
+  }
+}
+@media(max-width: 680px) {
+  .showcase-backdrop { object-position: 100% center; opacity: 1; }
+  .showcase::before { background: linear-gradient(90deg,rgba(2,11,30,.78),rgba(2,11,30,.50) 78%,rgba(2,11,30,.44)),linear-gradient(180deg,rgba(2,11,30,.16),transparent 38%,rgba(2,11,30,.45)); }
+  .showcase-grid { min-height: 490px; padding-block: 48px 62px; }
+  .showcase-copy { width: 100%; max-width: 460px; }
+  .showcase-brand-logo { width: 100%; max-width: 460px; }
+  .showcase-subtitle { margin-top: -12px; font-size: clamp(17px, 4.65vw, 23px); letter-spacing: 0; }
+  .showcase-desc { max-width: 370px; font-size: 13px; }
+}
+
+/* M1.7 — Latin-forward Teko typography, Japanese glyphs use the fallback stack. */
+:root { --display-font: 'Teko', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif; }
+/* Keep technical metadata monospaced; use Teko as primary for editorial and navigation text. */
+.desktop-nav a, .header-contact, .footer-nav a, .mobile-menu nav a,
+.solid-link, .under-link, .outline-link, .contact-strip a,
+.work-label h2, .work-label h3, .section-heading h2, .studio-news h2,
+.works-page-head h1, .category-list strong, .work-giant,
+.work-label p, .showcase-subtitle, .filter-button, .simple h1,
+.info-rows strong, .card h3 { font-family: var(--display-font); }
+.desktop-nav a, .header-contact, .footer-nav a, .mobile-menu nav a,
+.solid-link, .under-link, .outline-link, .contact-strip a,
+.section-heading h2, .studio-news h2, .works-page-head h1,
+.category-list strong, .work-label h2, .work-label h3,
+.work-giant, .simple h1, .info-rows strong { font-weight: 600; }
+/* Teko is significantly narrower than the previous heading face. Tune metrics for legibility. */
+.section-heading h2, .studio-news h2, .works-page-head h1 { letter-spacing: .005em; }
+.work-label h2, .work-label h3 { letter-spacing: .005em; }
+.desktop-nav a, .footer-nav a { font-size: 17px; line-height: 1.1; }
+.header-contact { font-size: 17px; line-height: 1.1; }
+.mobile-menu nav a { font-size: 21px; line-height: 1.3; }
+.solid-link, .under-link, .outline-link, .contact-strip a { font-size: 18px; line-height: 1.25; }
+.filter-button { font-size: 19px; line-height: 1.2; }
+@media(max-width: 680px) {
+  .section-heading h2 { font-size: 68px; }
+  .works-page-head h1 { font-size: 88px; }
+}
+@media(max-width: 380px) {
+  .section-heading h2 { font-size: 58px; }
+}
+
+/* M1.8 — Italic Latin typography. Brand logo.svg remains a separate, unmodified image. */
+/* Supplied Teko files are upright cuts; browsers synthesize italic for these labels. */
+.header-type, .desktop-nav a, .header-contact,
+.mobile-menu summary, .mobile-menu nav a,
+.footer-nav a, .footer-bottom,
+.showcase-meta, .micro-title, .showcase-bottom,
+.section-overline, .section-heading h2, .studio-news h2,
+.work-corner-tag, .work-image-label, .work-giant,
+.work-label h2, .work-label h3, .category-list strong,
+.category-count, .contact-strip p,
+.works-page-head h1, .simple .eyebrow, .simple h1,
+.filter-button, .info-divider, .info-rows > div > span,
+.information-empty span, .card .index, .card h3,
+:where(span[lang="en"]) {
+  font-family: 'Teko', 'Arial Narrow', sans-serif;
+  font-style: italic;
+  font-synthesis: style;
+}
+/* Keep compact English captions readable with Teko's condensed proportions. */
+.header-type, .showcase-meta, .micro-title, .showcase-bottom,
+.section-overline, .work-corner-tag, .work-image-label,
+.category-count, .contact-strip p, .simple .eyebrow,
+.info-divider, .info-rows > div > span,
+.information-empty span, .card .index {
+  font-size: 14px;
+  line-height: 1.3;
+}
+.footer-bottom { font-size: 13px; }
+.filter-button span { font-style: italic; }
+/* The parent metadata span is block-level; an inline English fragment must stay inline. */
+.work-label span[lang="en"] { display: inline; }
+/* Japanese copy and the provided SVG artwork are never artificially slanted. */
+.showcase-subtitle, .showcase-desc, .section-jp, .category-note,
+.work-label p, .simple .intro, .info-rows p, .footer-identity p { font-style: normal; }
+
+
+/* M1.9 — Compact typography and standardized brand-blue interactive hover.
+   Additive overrides based on M1.8. Never alter the supplied logo.svg or hero asset. */
+:root { --hover-blue: #3879E0; }
+
+/* Compact hierarchy: text remains readable rather than uniformly scaled down. */
+.header-type { font-size: 12px; }
+.desktop-nav a, .header-contact, .footer-nav a { font-size: 15px; }
+.mobile-menu nav a { font-size: 18px; }
+.mobile-menu summary { font-size: 13px; }
+.solid-link, .under-link, .outline-link, .contact-strip a { font-size: 16px; }
+.filter-button { font-size: 16px; }
+.header-contact { padding: 10px 15px; }
+.showcase-subtitle { font-size: clamp(17px, 1.75vw, 24px); }
+.showcase-desc { font-size: 13px; }
+.showcase-meta, .micro-title, .showcase-bottom,
+.section-overline, .work-corner-tag, .work-image-label,
+.category-count, .contact-strip p, .simple .eyebrow,
+.info-divider, .info-rows > div > span,
+.information-empty span, .card .index { font-size: 12px; }
+.footer-bottom { font-size: 11px; }
+.section-heading h2 { font-size: clamp(43px, 5.4vw, 80px); }
+.studio-news h2 { font-size: clamp(43px, 5.2vw, 69px); }
+.works-page-head h1 { font-size: clamp(66px, 9.2vw, 126px); }
+.work-label h2, .work-label h3 { font-size: clamp(26px, 2.6vw, 39px); }
+.category-list strong { font-size: clamp(30px, 4vw, 57px); }
+.simple h1 { font-size: clamp(35px, 4.6vw, 65px); }
+.simple .intro { font-size: 14px; }
+.info-rows strong { font-size: clamp(17px, 1.85vw, 25px); }
+.contact-strip h2 { font-size: clamp(23px, 2.8vw, 36px); }
+.work-giant { font-size: clamp(175px, 23vw, 340px); }
+.editor-visual-word { font-size: clamp(115px, 15vw, 220px); }
+.card h3 { font-size: 23px; }
+
+/* Links and text navigation: actual hover color equals the logo blue. */
+.desktop-nav a[aria-current='page'], .desktop-nav a:hover,
+.mobile-menu nav a:hover, .footer-nav a:hover, .footer-bottom a:hover,
+.under-link:hover, .showcase-bottom a:hover, .simple-link:hover,
+.category-list a:hover, .work-unit:hover .work-label h2,
+.work-unit:hover .work-label h3, .work-unit:hover .work-arrow,
+.work-unit:hover .image-open { color: var(--hover-blue); }
+.work-unit:hover .image-open, .mobile-menu summary:hover { border-color: var(--hover-blue); }
+.mobile-menu summary:hover { color: var(--hover-blue); }
+/* Filled and outlined action buttons: brand-blue background with readable white text. */
+.header-contact:hover, .solid-link:hover, .contact-strip a:hover,
+.outline-link:hover, .filter-button:hover {
+  color: #fff;
+  background: var(--hover-blue);
+  border-color: var(--hover-blue);
+}
+.filter-button:hover span { color: #fff; }
+/* Preserve persistent selected state; hover changes only while pointed at a control. */
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline-color: var(--hover-blue);
+}
+@media (max-width: 900px) {
+  .work-label h2, .work-label h3 { font-size: 28px; }
+}
+@media (max-width: 680px) {
+  .header-type { font-size: 11px; }
+  .showcase-subtitle { font-size: clamp(17px, 4.25vw, 20px); }
+  .showcase-desc { font-size: 12.5px; }
+  .section-heading h2 { font-size: clamp(45px, 11.4vw, 56px); }
+  .studio-news h2 { font-size: 52px; }
+  .works-page-head h1 { font-size: clamp(62px, 15vw, 74px); }
+  .category-list strong { font-size: 34px; }
+  .work-giant { font-size: 238px; }
+  .editor-visual-word { font-size: 173px; }
+  .filter-button { font-size: 15px; }
+  .solid-link, .under-link, .outline-link, .contact-strip a { font-size: 15px; }
+  .footer-bottom { font-size: 10px; }
+}
+@media (max-width: 380px) {
+  .section-heading h2 { font-size: 44px; }
+  .category-list strong { font-size: 30px; }
+  .showcase-subtitle { font-size: 17px; }
+  .works-page-head h1 { font-size: 60px; }
+}

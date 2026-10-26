@@ -10,8 +10,9 @@ const base = import.meta.env.BASE_URL;
       <div class="showcase-grid">
         <div class="showcase-copy">
           <p class="micro-title">INDEPENDENT DEVELOPMENT STUDIO</p>
-          <h1 id="showcase-title">ソフトウェア<br />ツール・サービス<span class="title-period">.</span></h1>
-          <p class="showcase-desc">Windows向けアプリケーションや開発者向けライブラリなど、さまざまなソフトウェアを個人で開発しています。</p>
+          <h1 id="showcase-title" class="showcase-logo-heading"><img class="showcase-brand-logo" src={`${base}assets/brand/logo.svg`} alt="LIÜGEL STUDIO" decoding="async" fetchpriority="high" /></h1>
+          <p class="showcase-subtitle">ソフトウェア・ツール・サービス</p>
+          <p class="showcase-desc"><span lang="en">Windows</span>向けアプリケーションや開発者向けライブラリなど、さまざまなソフトウェアを個人で開発しています。</p>
           <div class="showcase-buttons"><a class="solid-link" href={`${base}products/`}>開発作品を見る <span aria-hidden="true">↗</span></a><a class="under-link" href={`${base}about/`}>スタジオについて <span aria-hidden="true">→</span></a></div>
         </div>
       </div>
@@ -25,11 +26,11 @@ const base = import.meta.env.BASE_URL;
       <div class="work-feature-grid">
         <a class="work-unit work-unit-main" href={`${base}products/vrccm/`}>
           <div class="work-image work-image-vrccm"><div class="work-corner-tag">01 / APPLICATION</div><div class="work-pattern-rings" aria-hidden="true"></div><span class="work-giant">V</span><span class="work-image-label">VRC CACHE MANAGER</span><span class="image-open" aria-hidden="true">↗</span></div>
-          <div class="work-label"><div><span>WINDOWS APPLICATION · 開発中</span><h3>VRCCM</h3><p>VRChatのキャッシュ管理を支援するWindows向けツール</p></div><span class="work-arrow" aria-hidden="true">↗</span></div>
+          <div class="work-label"><div><span><span lang="en">WINDOWS APPLICATION</span> · 開発中</span><h3>VRCCM</h3><p><span lang="en">VRChat</span>のキャッシュ管理を支援する<span lang="en">Windows</span>向けツール</p></div><span class="work-arrow" aria-hidden="true">↗</span></div>
         </a>
         <a class="work-unit work-unit-sub" href={`${base}technology/`}>
           <div class="work-image work-image-editor"><div class="work-corner-tag">02 / DEVELOPER TOOL</div><div class="code-pattern" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="editor-visual-word" aria-hidden="true">{`{ }`}</div><span class="work-image-label">EDITOR / COMPONENT</span><span class="image-open" aria-hidden="true">↗</span></div>
-          <div class="work-label"><div><span>DEVELOPER LIBRARY · 開発中</span><h3>Liugel.Editor</h3><p>軽量コードエディターライブラリ</p></div><span class="work-arrow" aria-hidden="true">↗</span></div>
+          <div class="work-label"><div><span><span lang="en">DEVELOPER LIBRARY</span> · 開発中</span><h3>Liugel.Editor</h3><p>軽量コードエディターライブラリ</p></div><span class="work-arrow" aria-hidden="true">↗</span></div>
         </a>
       </div>
       <p class="works-caption">※ 画像は製品のイメージグラフィックです。実際のアプリ画面ではありません。</p>
@@ -39,14 +40,14 @@ const base = import.meta.env.BASE_URL;
   <section class="categories-section" aria-labelledby="categories-heading"><div class="shell">
     <div class="section-heading section-heading-dark"><div><p class="section-overline"><span class="section-number">02</span> DEVELOPMENT AREAS</p><h2 id="categories-heading">Categories<span class="heading-dot">.</span></h2><p class="section-jp">開発分野</p></div></div>
     <div class="category-list">
-      <a href={`${base}products/?category=software`}><span class="category-count">01</span><strong>Software</strong><span class="category-note">Windows向けアプリケーション</span><span class="category-arrow">↗</span></a>
+      <a href={`${base}products/?category=software`}><span class="category-count">01</span><strong>Software</strong><span class="category-note"><span lang="en">Windows</span>向けアプリケーション</span><span class="category-arrow">↗</span></a>
       <a href={`${base}products/?category=tools`}><span class="category-count">02</span><strong>Tools</strong><span class="category-note">開発ツール・ライブラリ</span><span class="category-arrow">↗</span></a>
       <a href={`${base}products/?category=services`}><span class="category-count">03</span><strong>Services</strong><span class="category-note">公開サービスは現在準備中</span><span class="category-arrow">↗</span></a>
     </div>
   </div></section>
 
   <section class="studio-news" aria-labelledby="studio-news-heading"><div class="shell studio-news-grid">
-    <div class="studio-panel"><p class="section-overline"><span class="section-number">03</span> THE STUDIO</p><h2 id="studio-news-heading">About</h2><p>LIÜGEL STUDIO（リューゲルスタジオ）は、ソフトウェアと開発者向け技術を制作する個人開発スタジオです。</p><a class="outline-link" href={`${base}about/`}>スタジオについて <span>↗</span></a></div>
+    <div class="studio-panel"><p class="section-overline"><span class="section-number">03</span> THE STUDIO</p><h2 id="studio-news-heading">About</h2><p><span lang="en">LIÜGEL STUDIO</span>（リューゲルスタジオ）は、ソフトウェアと開発者向け技術を制作する個人開発スタジオです。</p><a class="outline-link" href={`${base}about/`}>スタジオについて <span>↗</span></a></div>
     <div class="news-panel"><p class="section-overline"><span class="section-number">04</span> UPDATES</p><h2>News</h2><div class="news-placeholder"><span class="news-placeholder-line"></span><span>公開可能な更新情報を準備中です。</span></div><a class="outline-link" href={`${base}news/`}>ニュース一覧 <span>↗</span></a></div>
   </div></section>
 
