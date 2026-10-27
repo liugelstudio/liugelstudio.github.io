@@ -1,11 +1,13 @@
 ---
 import Layout from '../../layouts/SiteLayout.astro';
+import Headline from '../../components/Headline.astro';
+import NorthEast from '../../components/NorthEast.astro';
 const base = import.meta.env.BASE_URL;
 ---
 <Layout title="Technology — LIÜGEL STUDIO" description="Liugel技術と開発ライブラリの情報。">
-  <section class="shell simple information-page"><div class="eyebrow">TECHNOLOGY / DEVELOPMENT</div><h1>Technology<span class="heading-dot">.</span></h1><p class="intro">技術名「<span lang="en">Liugel</span>」のもとで制作している開発用ライブラリや、関連する技術情報をまとめています。</p>
+  <section class="shell simple information-page"><div class="eyebrow">TECHNOLOGY / DEVELOPMENT</div><h1><Headline name="technology" label="Technology" /></h1><p class="intro">技術名「<span lang="en">Liugel</span>」のもとで制作している開発用ライブラリや、関連する技術情報をまとめています。</p>
     <div class="info-divider"><span>PROJECTS</span></div>
     <div class="info-rows"><div><span>01 / LIBRARY</span><strong><span lang="en">Liugel.Editor</span></strong><p>軽量コードエディターライブラリ。開発中のプロジェクトです。</p></div><div><span>02 / TECHNICAL NAME</span><strong><span lang="en">Liugel</span></strong><p><span lang="en">LIÜGEL STUDIO</span>の技術名称として使用します。</p></div></div>
-    <a class="simple-link" href={`${base}docs/`}>ドキュメントを見る ↗</a>
+    <a class="simple-link" href={`${base}docs/`}>ドキュメントを見る <NorthEast /></a>
   </section>
 </Layout>

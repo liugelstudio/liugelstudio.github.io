@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import BrandLogo from '../components/BrandLogo.astro';
+import NorthEast from '../components/NorthEast.astro';
 const { title = 'LIÜGEL STUDIO', description = 'LIÜGEL STUDIOの公式サイト。ソフトウェア、開発者向けツール、技術情報を掲載しています。' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://liugelstudio.github.io/').href;
@@ -49,13 +50,13 @@ const nav = [
         <nav class="desktop-nav" aria-label="メインナビゲーション">
           {nav.map(item => <a href={link(item.path)} aria-current={Astro.url.pathname === link(item.path) ? 'page' : undefined}>{item.name}</a>)}
         </nav>
-        <a class="header-contact" href={link('contact/')}>Contact <span aria-hidden="true">↗</span></a>
+        <a class="header-contact" href={link('contact/')}>Contact <span aria-hidden="true"><NorthEast /></span></a>
         <details class="mobile-menu">
           <summary aria-expanded="false"><span class="mobile-menu-lines" aria-hidden="true"><i></i><i></i></span><span>MENU</span></summary>
           <nav aria-label="モバイルナビゲーション">
-            <a href={link()}>Home <span>↗</span></a>
-            {nav.map(item => <a href={link(item.path)}>{item.name} <span>↗</span></a>)}
-            <a href={link('contact/')}>Contact <span>↗</span></a>
+            <a href={link()}>Home <span aria-hidden="true"><NorthEast /></span></a>
+            {nav.map(item => <a href={link(item.path)}>{item.name} <span aria-hidden="true"><NorthEast /></span></a>)}
+            <a href={link('contact/')}>Contact <span aria-hidden="true"><NorthEast /></span></a>
           </nav>
         </details>
       </div>

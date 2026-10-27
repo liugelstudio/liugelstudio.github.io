@@ -1,9 +1,11 @@
 ---
 import Layout from '../../layouts/SiteLayout.astro';
+import Headline from '../../components/Headline.astro';
+import NorthEast from '../../components/NorthEast.astro';
 const base = import.meta.env.BASE_URL;
 ---
 <Layout title="Works — LIÜGEL STUDIO" description="LIÜGEL STUDIOのソフトウェア・開発ツール・サービス一覧です。">
-  <section class="works-page-head"><div class="shell"><p class="section-overline"><span class="section-number">INDEX</span> SOFTWARE / TOOLS / SERVICES</p><h1>Works<span class="heading-dot">.</span></h1><p>開発中のソフトウェア・ツールと、公開サービスの情報を掲載します。</p></div></section>
+  <section class="works-page-head"><div class="shell"><p class="section-overline"><span class="section-number">INDEX</span> SOFTWARE / TOOLS / SERVICES</p><h1><Headline name="works" label="Works" /></h1><p>開発中のソフトウェア・ツールと、公開サービスの情報を掲載します。</p></div></section>
   <section class="works-list-section"><div class="shell">
     <div class="work-filter" role="group" aria-label="開発作品をカテゴリーで絞り込む">
       <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">ALL <span>02</span></button>
@@ -12,8 +14,8 @@ const base = import.meta.env.BASE_URL;
       <button class="filter-button" type="button" data-filter="services" aria-pressed="false">SERVICES <span>00</span></button>
     </div>
     <div class="works-index-grid">
-      <a class="work-unit work-unit-main" data-category="software" href={`${base}products/vrccm/`}><div class="work-image work-image-vrccm"><div class="work-corner-tag">01 / APPLICATION</div><div class="work-pattern-rings" aria-hidden="true"></div><span class="work-giant">V</span><span class="work-image-label">VRC CACHE MANAGER</span><span class="image-open" aria-hidden="true">↗</span></div><div class="work-label"><div><span><span lang="en">WINDOWS APPLICATION</span> · 開発中</span><h2>VRCCM</h2><p><span lang="en">VRChat</span>のキャッシュ管理を支援する<span lang="en">Windows</span>向けツール</p></div><span class="work-arrow" aria-hidden="true">↗</span></div></a>
-      <a class="work-unit work-unit-sub" data-category="tools" href={`${base}technology/`}><div class="work-image work-image-editor"><div class="work-corner-tag">02 / DEVELOPER TOOL</div><div class="code-pattern" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="editor-visual-word" aria-hidden="true">{`{ }`}</div><span class="work-image-label">EDITOR / COMPONENT</span><span class="image-open" aria-hidden="true">↗</span></div><div class="work-label"><div><span><span lang="en">DEVELOPER LIBRARY</span> · 開発中</span><h2>Liugel.Editor</h2><p>軽量コードエディターライブラリ</p></div><span class="work-arrow" aria-hidden="true">↗</span></div></a>
+      <a class="work-unit work-unit-main" data-category="software" href={`${base}products/vrccm/`}><div class="work-image work-image-vrccm"><div class="work-corner-tag">01 / APPLICATION</div><div class="work-pattern-rings" aria-hidden="true"></div><span class="work-giant">V</span><span class="work-image-label">VRC CACHE MANAGER</span><span class="image-open" aria-hidden="true"><NorthEast /></span></div><div class="work-label"><div><span><span lang="en">WINDOWS APPLICATION</span> · 開発中</span><h2>VRCCM</h2><p><span lang="en">VRChat</span>のキャッシュ管理を支援する<span lang="en">Windows</span>向けツール</p></div><span class="work-arrow" aria-hidden="true"><NorthEast /></span></div></a>
+      <a class="work-unit work-unit-sub" data-category="tools" href={`${base}technology/`}><div class="work-image work-image-editor"><div class="work-corner-tag">02 / DEVELOPER TOOL</div><div class="code-pattern" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="editor-visual-word" aria-hidden="true">{`{ }`}</div><span class="work-image-label">EDITOR / COMPONENT</span><span class="image-open" aria-hidden="true"><NorthEast /></span></div><div class="work-label"><div><span><span lang="en">DEVELOPER LIBRARY</span> · 開発中</span><h2>Liugel.Editor</h2><p>軽量コードエディターライブラリ</p></div><span class="work-arrow" aria-hidden="true"><NorthEast /></span></div></a>
     </div>
     <div class="works-empty" id="works-empty" hidden><strong>現在、掲載中のサービスはありません。</strong><p>公開可能なサービスができ次第、こちらに追加します。</p></div>
     <p class="works-caption">※ ビジュアルはコンセプトグラフィックであり、実際の製品画面ではありません。</p>

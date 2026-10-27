@@ -145,6 +145,7 @@ img {
   font-synthesis: none;
   line-height: 1.3;
   font-size: 12px;
+  transform: translateY(4px);
 }
 .desktop-nav {
   display: flex;
@@ -160,8 +161,11 @@ img {
   font-family: var(--type);
   font-synthesis: none;
   font-size: 15px;
+  transform: translateY(4px);
 }
 .header-contact {
+  display: inline-flex;
+  align-items: center;
   color: #0b0e13;
   white-space: nowrap;
   background: var(--paper);
@@ -170,7 +174,7 @@ img {
   font-family: var(--type);
   font-synthesis: none;
   font-size: 15px;
-  padding: 10px 15px;
+  padding: 14px 15px 6px;
   min-height: 44px;
 }
 .header-contact span {
@@ -178,6 +182,30 @@ img {
 }
 .mobile-menu {
   display: none;
+}
+.ne-icon {
+  width: 1em;
+  height: 1em;
+  flex: none;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: -0.14em;
+}
+.headline-logo {
+  display: block;
+  line-height: 0;
+}
+.headline-logo svg {
+  display: block;
+  width: auto;
+  height: .85em;
+}
+.contact-strip-headline {
+  margin: 0 0 10px;
+  line-height: 0;
+}
+.contact-strip-headline .headline-logo svg {
+  height: clamp(20px, 2.4vw, 30px);
 }
 .showcase {
   position: relative;
@@ -259,7 +287,7 @@ img {
 }
 .meta-right {
   margin-left: auto;
-  color: #b0c8ec;
+  color: #eef3f9;
 }
 .showcase-grid {
   display: flex;
@@ -314,7 +342,7 @@ img {
   gap: 44px;
   background: var(--white);
   color: var(--ink);
-  padding: 14px 19px;
+  padding: 17px 19px 11px;
   transition: background .15s, transform .15s;
   font-family: var(--type);
   font-weight: 600;
@@ -422,7 +450,7 @@ img {
   min-width: 176px;
   gap: 28px;
   border: 1px solid currentColor;
-  padding: 12px 15px;
+  padding: 14px 15px 10px;
   transition: color .15s,background .15s;
   white-space: nowrap;
   font-family: var(--type);
@@ -755,7 +783,7 @@ img {
   justify-content: space-between;
   gap: 30px;
   min-width: 205px;
-  padding: 14px 18px;
+  padding: 20px 18px 8px;
   color: #15191f;
   background: white;
   font-family: var(--type);

@@ -1,0 +1,32 @@
+---
+import pagesAbout from '../assets/headlines/pages/about.svg?raw';
+import pagesContact from '../assets/headlines/pages/contact.svg?raw';
+import pagesDocs from '../assets/headlines/pages/docs.svg?raw';
+import pagesNews from '../assets/headlines/pages/news.svg?raw';
+import pagesTechnology from '../assets/headlines/pages/technology.svg?raw';
+import pagesWorks from '../assets/headlines/pages/works.svg?raw';
+import topAbout from '../assets/headlines/top/about.svg?raw';
+import topCategories from '../assets/headlines/top/categories.svg?raw';
+import topContact from '../assets/headlines/top/contact.svg?raw';
+import topNews from '../assets/headlines/top/news.svg?raw';
+import topServices from '../assets/headlines/top/services.svg?raw';
+import topSoftware from '../assets/headlines/top/software.svg?raw';
+import topTools from '../assets/headlines/top/tools.svg?raw';
+import topWorks from '../assets/headlines/top/works.svg?raw';
+
+interface Props { name: string; variant?: 'pages' | 'top'; label: string; }
+const { name, variant = 'pages', label } = Astro.props;
+const sources: Record<string, Record<string, string>> = {
+  pages: {
+    about: pagesAbout, contact: pagesContact, docs: pagesDocs,
+    news: pagesNews, technology: pagesTechnology, works: pagesWorks,
+  },
+  top: {
+    about: topAbout, categories: topCategories, contact: topContact,
+    news: topNews, services: topServices, software: topSoftware,
+    tools: topTools, works: topWorks,
+  },
+};
+const markup = sources[variant][name];
+---
+<span class="headline-logo" role="img" aria-label={label}><Fragment set:html={markup} /></span>
