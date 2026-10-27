@@ -1,4 +1,131 @@
 ---
 import Layout from '../../layouts/SiteLayout.astro';
 ---
-<Layout title="Contact — LIÜGEL STUDIO" description="LIÜGEL STUDIOのお問い合わせ・サポート窓口。"><section class="shell simple information-page"><div class="eyebrow">CONTACT / SUPPORT</div><h1>Contact<span class="heading-dot">.</span></h1><p class="intro">製品についてのご質問や不具合のご報告など、正式な受付窓口を準備しています。</p><div class="info-divider"><span>SUPPORT</span></div><div class="information-empty"><span>CONTACT CHANNEL IN PREPARATION</span><p>公開可能な連絡手段が決まり次第、こちらに掲載します。現時点ではお問い合わせフォームは設置していません。</p></div></section></Layout>
+<Layout title="Contact — LIÜGEL STUDIO" description="LIÜGEL STUDIOのお問い合わせ・サポート窓口。">
+  <section class="shell simple information-page">
+    <div class="eyebrow">CONTACT / SUPPORT</div>
+    <h1>Contact<span class="heading-dot">.</span></h1>
+    <p class="intro">製品についてのご質問、不具合のご報告、その他のご連絡は、以下のフォームまたはメールで受け付けています。</p>
+
+    <div class="info-divider"><span>SUPPORT EMAIL</span></div>
+    <div class="info-rows">
+      <div>
+        <span>OFFICIAL CONTACT</span>
+        <strong><a href="mailto:liugel-studio@outlook.jp">liugel-studio@outlook.jp</a></strong>
+        <p>LIÜGEL STUDIO の公式連絡先です。返信はこのアドレスから行います。</p>
+      </div>
+    </div>
+
+    <div class="info-divider"><span>FORM</span></div>
+
+    <p id="contact-thanks" class="contact-thanks" hidden>送信ありがとうございました。内容を確認のうえ、入力いただいたメールアドレスへ返信します。</p>
+
+    <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="45f2c768-459d-40eb-a1f8-c675f5238b19" />
+      <input type="hidden" name="subject" value="[LIÜGEL STUDIO] サイトからのお問い合わせ" />
+      <input type="hidden" name="from_name" value="LIÜGEL STUDIO Contact Form" />
+      <input type="hidden" name="redirect" value="https://liugelstudio.github.io/contact/?thanks=1" />
+      <input type="checkbox" name="botcheck" class="contact-botcheck" tabindex="-1" autocomplete="off" />
+
+      <div class="contact-field">
+        <label for="cf-name">お名前 <span class="contact-required">必須</span></label>
+        <input id="cf-name" type="text" name="name" autocomplete="name" required />
+      </div>
+
+      <div class="contact-field">
+        <label for="cf-email">メールアドレス <span class="contact-required">必須</span></label>
+        <input id="cf-email" type="email" name="email" autocomplete="email" required />
+      </div>
+
+      <div class="contact-field">
+        <label for="cf-topic">お問い合わせ種別</label>
+        <select id="cf-topic" name="topic">
+          <option value="製品について">製品について</option>
+          <option value="不具合のご報告">不具合のご報告</option>
+          <option value="その他のご連絡">その他のご連絡</option>
+        </select>
+      </div>
+
+      <div class="contact-field">
+        <label for="cf-message">本文 <span class="contact-required">必須</span></label>
+        <textarea id="cf-message" name="message" rows="8" required></textarea>
+      </div>
+
+      <div class="h-captcha" data-captcha="true"></div>
+
+      <button type="submit" class="contact-submit">送信する</button>
+      <p class="contact-note">送信内容は liugel-studio@outlook.jp 宛に届きます。スパム対策のため認証（hCaptcha）を使用しています。</p>
+    </form>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script is:inline>
+      if (new URLSearchParams(location.search).get('thanks') === '1') {
+        document.getElementById('contact-thanks').hidden = false;
+        document.getElementById('contact-form').hidden = true;
+      }
+    </script>
+  </section>
+
+  <style>
+    .contact-thanks {
+      border: 1px solid var(--blue);
+      color: var(--blue-hover);
+      padding: 14px 16px;
+      margin-bottom: 28px;
+    }
+    .contact-form {
+      max-width: 640px;
+    }
+    .contact-field {
+      margin-bottom: 20px;
+    }
+    .contact-field label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .contact-required {
+      font-size: 12px;
+      color: var(--blue-hover);
+      margin-left: 6px;
+    }
+    .contact-field input,
+    .contact-field select,
+    .contact-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 16px;
+      padding: 12px;
+      border: 1px solid #c9ced6;
+      border-radius: 4px;
+      background: #fff;
+      color: inherit;
+    }
+    .contact-field textarea {
+      resize: vertical;
+    }
+    .contact-botcheck {
+      display: none !important;
+    }
+    .contact-submit {
+      min-height: 44px;
+      padding: 12px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 4px;
+      background: var(--blue);
+      color: #fff;
+      cursor: pointer;
+    }
+    .contact-submit:hover {
+      background: var(--blue-hover);
+    }
+    .contact-note {
+      font-size: 13px;
+      margin-top: 14px;
+    }
+    .h-captcha {
+      margin-bottom: 20px;
+    }
+  </style>
+</Layout>
