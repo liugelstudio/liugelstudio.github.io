@@ -683,6 +683,12 @@ img {
 .category-list a:hover .category-arrow {
   transform: translateX(4px);
 }
+.category-list a > :not(.category-arrow) {
+  transition: transform .2s;
+}
+.category-list a:hover > :not(.category-arrow) {
+  transform: translateX(12px);
+}
 .category-count {
   font: 600 11px var(--type);
   color: #91a3bb;
